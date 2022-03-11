@@ -49,5 +49,35 @@ require_once 'template_head.php';
     <?php endforeach; ?>
     </tbody>
 </table>
+<?php
+$sql = 'SELECT * FROM `product` ORDER BY `id` DESC LIMIT 5';
+
+$products = $connection
+    ->query($sql)
+    ->fetchAll(PDO::FETCH_ASSOC);
+?>
+<h3>Users</h3>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>SELLING PRICE</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($products as $product): ?>
+        <tr>
+            <td><?= $product['id'] ?></td>
+            <td><?= $product['name'] ?></td>
+            <td><?= $product['selling_price'] ?></td>
+            <td>
+                <a href="/detail-product.php?id=<?= $product['id'] ?>">Detail</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
 </body>
 </html>
