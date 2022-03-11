@@ -1,0 +1,9 @@
+<VirtualHost *:80>
+ServerName cda.bordeaux.m2i
+DocumentRoot "E:/projects/course/cda-bordeaux-php"
+<Directory "E:/projects/course/cda-bordeaux-php/">
+DirectoryIndex index.php
+AllowOverride All
+Require all granted
+</Directory>
+</VirtualHost>

@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 try {
@@ -11,4 +10,3 @@ try {
 }
 
 ?>
-
